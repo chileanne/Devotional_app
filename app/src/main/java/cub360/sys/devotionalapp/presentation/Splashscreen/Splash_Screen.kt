@@ -18,6 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cub360.sys.devotionalapp.R
+import cub360.sys.devotionalapp.ui.theme.orangecolor
 
 @Composable
 fun SplashScreen(){
@@ -95,7 +96,7 @@ fun NextButton(){
     Card(
         shape = RoundedCornerShape(5.dp),
         elevation = 4.dp,
-        backgroundColor = Color.Blue,
+        backgroundColor = orangecolor,
         modifier = Modifier
             .width(180.dp)
             .height(50.dp)
