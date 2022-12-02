@@ -2,6 +2,7 @@ package cub360.sys.devotionalapp.presentation.Splashscreen
 
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -18,6 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cub360.sys.devotionalapp.R
+import cub360.sys.devotionalapp.ui.theme.Purple200
 import cub360.sys.devotionalapp.ui.theme.orangecolor
 
 @Composable
@@ -46,6 +48,7 @@ fun Items(
       horizontalAlignment = Alignment.CenterHorizontally,
       modifier = Modifier
           .fillMaxWidth()
+
 
   ){
       Image(
@@ -83,7 +86,13 @@ fun Items(
       Spacer(modifier = Modifier.height(77.dp))
 
 
-      NextButton()
+      Row(
+          horizontalArrangement = Arrangement.SpaceEvenly
+      ){
+          NextButton(title = "Previous")
+          NextButton(title = "Next")
+      }
+
 
 
   }
@@ -92,22 +101,24 @@ fun Items(
 
 /** next Buttons **/
 @Composable
-fun NextButton(){
+fun NextButton(title : String){
     Card(
         shape = RoundedCornerShape(5.dp),
         elevation = 4.dp,
         backgroundColor = orangecolor,
         modifier = Modifier
-            .width(180.dp)
-            .height(50.dp)
+            .width(120.dp)
+            .height(70.dp)
+            .padding(10.dp)
 
 
     ) {
         Text(
-            text = "Next",
+            text = title,
             fontWeight = FontWeight.W400,
             fontSize = 18.sp,
             textAlign = TextAlign.Center,
+            color = Color.White,
             modifier = Modifier
                 .padding(10.dp)
 
